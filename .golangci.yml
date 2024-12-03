@@ -9,7 +9,7 @@ linters-settings:
     rules:
       main:
         allow:
-          - github.com/KarimovKamil/otus-go-final-project
+          - github.com/gmcriptobox/otus-go-final-project
           - io
           - os
           - fmt

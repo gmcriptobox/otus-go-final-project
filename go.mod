@@ -1,4 +1,4 @@
-module github.com/KarimovKamil/otus-go-final-project
+module github.com/gmcriptobox/otus-go-final-project
 
 go 1.22
 

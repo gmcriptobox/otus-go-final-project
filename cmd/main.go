@@ -1,6 +1,6 @@
 package main
 
-import "github.com/KarimovKamil/otus-go-final-project/cmd/commands"
+import "github.com/gmcriptobox/otus-go-final-project/cmd/commands"
 
 func main() {
 	commands.Execute()

@@ -7,7 +7,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/KarimovKamil/otus-go-final-project/internal/entity/request"
+	"github.com/gmcriptobox/otus-go-final-project/internal/entity/request"
 	"github.com/mailru/easyjson"
 	"github.com/spf13/cobra"
 )
