@@ -1,0 +1,5 @@
+bucket:
+  ipLimit: 5
+  loginLimit: 3
+  passwordLimit: 3
+  bucketTtl: 60

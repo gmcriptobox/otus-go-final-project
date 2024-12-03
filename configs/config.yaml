@@ -1,0 +1,13 @@
+server:
+  port: ":9012"
+  readTimeout: 10
+  writeTimeout: 10
+
+psql:
+  dsn: "host=postgres port=5432 user=postgres password=postgres dbname=anti-brute-force sslmode=disable"
+
+bucket:
+  ipLimit: 1000
+  loginLimit: 10
+  passwordLimit: 10
+  bucketTtl: 300

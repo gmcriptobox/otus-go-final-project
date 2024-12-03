@@ -1,0 +1,6 @@
+DELETE localhost:9012/api/blacklist
+Content-Type: application/json
+
+{
+  "network": "128.101.1.0/24"
+}

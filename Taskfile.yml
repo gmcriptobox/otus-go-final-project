@@ -1,0 +1,20 @@
+version: 3
+
+tasks:
+  build-bin:
+    cmd: go build -o ./anti-brute-force-app.exe ./internal/app/app.go
+
+  build:
+    cmd: docker-compose build
+
+  run:
+    cmd: docker-compose up
+
+  stop:
+    cmd: docker-compose down
+
+  lint:
+    cmd: golangci-lint run
+
+  test:
+    cmd: go test -race -count=100

@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16.3
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: "anti-brute-force"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d anti-brute-force -U postgres"]
+      interval: 5s
+      timeout: 10s
+      start_period: 5s
+    volumes:
+      - ./db:/var/lib/postgresql/data
+      - ./migrations/postgres/2024-07-09-1-init_schema.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - abf-net
+
+  server:
+    container_name: anti-brute-force-app
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "9012:9012"
+    networks:
+      - abf-net
+
+networks:
+  abf-net:
+    driver: bridge
